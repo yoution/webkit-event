@@ -11,7 +11,7 @@
 - Event:AT_TARGET   *eventPath*  [head] =>  handleEvent
 - Event:BUBBLING_PHASE   *eventPath*  [head -1,...,end] =>  handleEvent
 
-### Handle Event 
+#### Handle Event 中的特例
 当at_target过程中的dom上同时绑定capture和bubbling事件时，事件是按照绑定顺序触发
 ```cpp
   if (event.eventPhase() == Event::CAPTURING_PHASE && !registeredListener->useCapture())
