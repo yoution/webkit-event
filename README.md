@@ -1,17 +1,17 @@
 浏览器js事件研究
 =====
 
-###add 
+### add 
 EventListenerMap::add  WebCore/dom/EventListenerMap.cpp
 
-###dispatch
+### dispatch
 dispatchEventInDOM   WebCore/dom/EventDispatcher.cpp
 >eventPath = [target, ...,HTMLBodyElement,HTMLHtmlElement,HTMLDocument,HTMLDocument],第2个HTMLDocument的currentTarget为DomWindow
 >>> Event:CAPTURING_PHASE   eventPath  [end,...,head -1] => handleEvent
 > Event:AT_TARGET   eventPath  [head] =>  handleEvent
 > Event:BUBBLING_PHASE   eventPath  [head -1,...,end] =>  handleEvent
 
-####handleEvent 
+#### handleEvent 
 当at_target过程中的dom上同时绑定capture和bubbling事件时，事件时按照绑定顺序出发
 ```cpp
   if (event.eventPhase() == Event::CAPTURING_PHASE && !registeredListener->useCapture())
