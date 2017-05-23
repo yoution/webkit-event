@@ -7,7 +7,7 @@ EventListenerMap::add  WebCore/dom/EventListenerMap.cpp
 ###dispatch
 dispatchEventInDOM   WebCore/dom/EventDispatcher.cpp
 >eventPath = [target, ...,HTMLBodyElement,HTMLHtmlElement,HTMLDocument,HTMLDocument],第2个HTMLDocument的currentTarget为DomWindow
-> Event:CAPTURING_PHASE   eventPath  [end,...,head -1] => handleEvent
+>>> Event:CAPTURING_PHASE   eventPath  [end,...,head -1] => handleEvent
 > Event:AT_TARGET   eventPath  [head] =>  handleEvent
 > Event:BUBBLING_PHASE   eventPath  [head -1,...,end] =>  handleEvent
 
